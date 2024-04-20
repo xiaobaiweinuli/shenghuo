@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 
 title: N・H・K にようこそ！ # the main title
 
-tagline: 随便写写@MsEspeon # it will display as the sub-title
+tagline: MsEspeon@随便写写 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A personal blog for recording everyday life, technical learning, and pieces of thoughts.
@@ -115,10 +115,10 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo: ittousei/ittousei.github.io # <gh-username>/<repo>
+    repo_id: R_kgDOLwStXQ
+    category: comments
+    category_id: DIC_kwDOLwStXc4Ce0Hd
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
@@ -146,7 +146,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: "/ittousei"
+baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 

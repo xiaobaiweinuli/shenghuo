@@ -1,26 +1,26 @@
 const swconf = {
   
-    cacheName: 'chirpy-1713511173',resources: [
-      '/ittousei/assets/css/jekyll-theme-chirpy.css',
-      '/ittousei/',
+    cacheName: 'chirpy-1713600442',resources: [
+      '/assets/css/jekyll-theme-chirpy.css',
+      '/',
       
-        '/ittousei/categories/',
+        '/categories/',
       
-        '/ittousei/tags/',
+        '/treehole/',
       
-        '/ittousei/archives/',
+        '/archives/',
       
-        '/ittousei/about/',
+        '/about/',
       
 
       
       
-        '/ittousei/assets/js/dist/categories.min.js',
-        '/ittousei/assets/js/dist/commons.min.js',
-        '/ittousei/assets/js/dist/home.min.js',
-        '/ittousei/assets/js/dist/misc.min.js',
-        '/ittousei/assets/js/dist/page.min.js',
-        '/ittousei/assets/js/dist/post.min.js'
+        '/assets/js/dist/categories.min.js',
+        '/assets/js/dist/commons.min.js',
+        '/assets/js/dist/home.min.js',
+        '/assets/js/dist/misc.min.js',
+        '/assets/js/dist/page.min.js',
+        '/assets/js/dist/post.min.js'
     ],allowHosts: [
       
           'fonts.googleapis.com',

@@ -5,14 +5,16 @@
 layout:
   post: Post
   category: Category
-  tag: Treehole
+  tag: Tag
+  treehole: Treehole
 
 # The tabs of sidebar
 tabs:
   # format: <filename_without_extension>: <value>
   home: Home
   categories: Categories
-  tags: Treehole
+  tags: Tags
+  treehole: Treehole
   archives: Archives
   about: About
 
