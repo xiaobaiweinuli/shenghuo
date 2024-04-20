@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>N・H・K にようこそ！</title>
   <subtitle>A personal blog for recording everyday life, technical learning, and pieces of thoughts.</subtitle>
-  <updated>2024-04-20T16:34:28+08:00</updated>
+  <updated>2024-04-20T20:29:41+08:00</updated>
   <author>
     <name>MsEspeon</name>
     <uri>http://localhost:4000/</uri>
@@ -48,7 +48,7 @@
     <link href="http://localhost:4000/posts/%E6%94%B9%E5%8A%A8%E8%AF%B4%E6%98%8E/" rel="alternate" type="text/html" title="改动说明" />
     <published>2024-04-19T12:00:00+08:00</published>
   
-    <updated>2024-04-20T16:07:48+08:00</updated>
+    <updated>2024-04-20T16:34:43+08:00</updated>
   
     <id>http://localhost:4000/posts/%E6%94%B9%E5%8A%A8%E8%AF%B4%E6%98%8E/</id>
     <content src="http://localhost:4000/posts/%E6%94%B9%E5%8A%A8%E8%AF%B4%E6%98%8E/" />

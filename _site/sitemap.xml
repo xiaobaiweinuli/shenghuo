@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/posts/text-and-typography/</loc>
+<lastmod>2024-04-20T16:07:48+08:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/posts/write-a-new-post/</loc>
 <lastmod>2019-08-08T14:10:00+08:00</lastmod>
 </url>
@@ -14,7 +18,7 @@
 </url>
 <url>
 <loc>http://localhost:4000/posts/%E6%94%B9%E5%8A%A8%E8%AF%B4%E6%98%8E/</loc>
-<lastmod>2024-04-20T16:07:48+08:00</lastmod>
+<lastmod>2024-04-20T16:34:43+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/posts/%E6%90%9C%E7%B4%A2%E4%BC%98%E5%8C%96/</loc>
@@ -22,25 +26,28 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/</loc>
-<lastmod>2024-04-20T16:34:28+08:00</lastmod>
+<lastmod>2024-04-20T20:29:41+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/treehole/</loc>
-<lastmod>2024-04-20T16:34:28+08:00</lastmod>
+<lastmod>2024-04-20T20:29:41+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/archives/</loc>
-<lastmod>2024-04-20T16:34:28+08:00</lastmod>
+<lastmod>2024-04-20T20:29:41+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
-<lastmod>2024-04-20T16:34:28+08:00</lastmod>
+<lastmod>2024-04-20T20:29:41+08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/blogging/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/demo/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/tutorial/</loc>
