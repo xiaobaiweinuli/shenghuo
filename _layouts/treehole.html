@@ -6,22 +6,72 @@ layout: page
 <p>The page is served as a microblog space, where I would like to publish some short and simple contents, such as "what I'm doing" or "what's my feeling today".</p>
     
 <p>Instead of embedding the microblog system into <a href="https://github.com/jekyll/jekyll">Jekyll</a>, I simply adopt the <a href="https://giscus.app/">Giscus</a> and <a href="https://docs.github.com/en/discussions">GitHub Discussions</a> framework, so I can easily manage those short posts (and I don't need to write too many codes). Besides, I lift the comment restriction so that other users (if there are) can publish posts as well.</p> 
-    
+
 <p>Feel free to leave your messages here.</p>
 
-<script src="https://giscus.app/client.js"
-        data-repo="ittousei/ittousei.github.io"
-        data-repo-id="R_kgDOLwStXQ"
-        data-category="General"
-        data-category-id="DIC_kwDOLwStXc4Ce0Hd"
-        data-mapping="og:title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
+<!-- https://giscus.app/ -->
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',function () {
+      const origin = 'https://giscus.app';
+      const lightTheme = 'light';
+      const darkTheme = 'dark_dimmed';
+  
+      let initTheme = lightTheme;
+      const html = document.documentElement;
+  
+      if (
+        (html.hasAttribute('data-mode') &&
+          html.getAttribute('data-mode') === 'dark') ||
+        (!html.hasAttribute('data-mode') &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        initTheme = darkTheme;
+      }
+  
+      let giscusAttributes = {
+        src: 'https://giscus.app/client.js',
+        'data-repo': '{{ site.comments.giscus.repo}}',
+        'data-repo-id': '{{ site.comments.giscus.repo_id }}',
+        'data-category': '{{ site.comments.giscus.category }}',
+        'data-category-id': '{{ site.comments.giscus.category_id }}',
+        'data-mapping': '{{ site.comments.giscus.mapping | default: 'pathname' }}',
+        'data-strict' : '{{ site.comments.giscus.strict | default: '0' }}',
+        'data-reactions-enabled': '{{ site.comments.giscus.reactions_enabled | default: '1' }}',
+        'data-emit-metadata': '0',
+        'data-theme': initTheme,
+        'data-input-position': '{{ site.comments.giscus.input_position | default: 'bottom' }}',
+        'data-lang': '{{ site.comments.giscus.lang | default: lang }}',
+        'data-loading': 'lazy',
+        crossorigin: 'anonymous',
+        async: ''
+      };
+  
+      let giscusScript = document.createElement('script');
+      Object.entries(giscusAttributes).forEach(([key, value]) =>
+        giscusScript.setAttribute(key, value)
+      );
+      let tailWrapper = document.getElementById('tail-wrapper');
+      tailWrapper.insertBefore(giscusScript, tailWrapper.firstChild);
+  
+      addEventListener('message', (event) => {
+        if (
+          event.source === window &&
+          event.data &&
+          event.data.direction === ModeToggle.ID
+        ) {
+          /* global theme mode changed */
+          const mode = event.data.message;
+          const theme = mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme;
+  
+          const message = {
+            setConfig: {
+              theme: theme
+            }
+          };
+  
+          const giscus = document.getElementsByClassName('giscus-frame')[0].contentWindow;
+          giscus.postMessage({ giscus: message }, origin);
+        }
+      });
+    })();
 </script>
