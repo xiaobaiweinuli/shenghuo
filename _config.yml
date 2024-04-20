@@ -115,10 +115,10 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: ittousei/ittousei.github.io # <gh-username>/<repo>
-    repo_id: R_kgDOLwStXQ
-    category: comments
-    category_id: DIC_kwDOLwStXc4Ce0Hd
+    repo: "ittousei/ittousei.github.io" # <gh-username>/<repo>
+    repo_id: "R_kgDOLwStXQ"
+    category: "General"
+    category_id: "DIC_kwDOLwStXc4Ce0Hd"
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
