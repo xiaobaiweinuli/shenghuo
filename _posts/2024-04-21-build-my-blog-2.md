@@ -1,0 +1,175 @@
+---
+title: Jekyll博客搭建教程（下篇）
+description: Chirpy主题的使用说明：使用Chirpy设置博客布局，在GitHub Page上部署博客
+author: MsEspeon
+date: 2024-04-20 20:17:00 +0800
+categories: [Tutorial, Jekyll]
+pin: true
+math: true
+mermaid: true
+---
+
+## 前言
+
+[Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)是一款基于Jekyll架构开发的主题模版，主要面向技术类博客的写作，这是该主题的一个[Demo](https://chirpy.cotes.page/)。本站的主题也是由Chirpy主题魔改而来。
+
+本文以Chirpy主题为例，介绍如何在Jekyll博客中应用主题模版，并将博客网站部署到GitHub Page上。其他主题的应用方法可能略有不同，但总体思路是一致的。
+
+## 下载主题
+
+Chirpy主题有两种下载方式：
+
+- Chirpy Starter
+- Git
+
+### Chirpy Starter
+
+前往官方的模版页面[Chirpy Start](https://github.com/cotes2020/chirpy-starter)，点击按钮<kbd>Use this template</kbd> > <kbd>Create a new repository</kbd>，将新的repository命名为`USERNAME.github.io`，其中`USERNAME`为你的GitHub用户名。
+
+再将项目下载到本地，并下载依赖库，将下列命令中的`USERNAME`替换为你的GitHub用户名。
+
+```zsh
+git clone https://github.com/USERNAME/USERNAME.github.io
+bundle
+```
+
+这个方法适合只想专心写文章不想接触底层代码的用户。用户无需关注原项目中那一大坨.html和.js文件（因为模版里没有），只需将文章添加至`_post`目录中即可实现博客的更新。当然不能修改代码也意味着，如果你想在原模版的基础上做些个性化修改，或是添加新的功能，用这个方法是无法实现的。
+
+### Git
+
+作为一个事多的人，只是套用模版而不做任何修改是无法满足我的需求的，因此我采用了第二种方法：用[Git](https://git-scm.com/)将整个项目的代码下载至本地。这样便能直接修改源代码，实现我想要的功能。
+
+```zsh
+git clone https://github.com/cotes2020/jekyll-theme-chirpy
+```
+
+由于后续操作会生成JavaScript文件，需事先安装[Node.js](https://nodejs.org/en)。再前往项目所在目录，运行初始化程序。
+
+```zsh
+bash tools/init
+```
+
+完成初始化后，还需下载依赖库。
+
+```zsh
+bundle
+```
+
+## 配置主题
+
+### 主要配置
+
+博客的配置信息存放在根目录的`./_config.yml`，常用的变量有：
+
+- lang - 语言
+- timezone - 时区
+- title - 网站标题
+- tagline - 网站副标题
+- description - 网站描述
+- url - 部署博客的地址，如`https://USERNAME.github.io`
+- avatar - 作者头像，如`https://chirpy-img.netlify.app/commons/avatar.jpg`
+
+### 可选配置
+
+在子目录`_data`下还存放有一些可选填的配置文件，主要涉及网页外观的显示，可根据需求修改。以下是对这些配置文件的简要说明：
+
+博客的语言信息存放在`_data/locate/`，如英语的配置文件为`_data/locate/en.yml`。比如我想自定义侧边菜单栏的选项名，只需修改以下配置。
+
+```yaml
+tabs:
+  # format: <filename_without_extension>: <value>
+  home: Home
+  categories: Categories
+  tags: Tags
+  treehole: Treehole
+  archives: Archives
+  about: About
+```
+
+文章的作者信息存放在`_data/authors.yml`，可填写多个作者，在文章的作者栏中引用作者id。
+
+```yaml
+MsEspeon:
+  name: MsEspeon
+  url: https://github.com/ittousei/
+```
+
+侧边菜单栏底部的社交账号信息存放在`_data/contact.yml`。比如我不想显示Twitter，只需在配置文件中注释掉相应内容。
+
+```yaml
+# - type: twitter
+#   icon: "fa-brands fa-x-twitter"
+```
+
+文章的分享信息存放在`_data/share.yml`。比如我想分享文章到Twitter，只需在配置文件中填写以下内容。
+
+```yaml
+platforms:
+  - type: Twitter
+    icon: "fa-brands fa-square-x-twitter"
+    link: "https://twitter.com/intent/tweet?text=TITLE&url=URL"
+```
+
+## 本地测试
+
+在服务器上部署博客前，可以先在本地[http://localhost:4000](http://localhost:4000)预览网页的效果。
+
+```zsh
+bundle exec jekyll s
+```
+
+注意：以上命令包含两个功能，一是根据项目文件生成静态网页文件，二是将静态网页部署至本地服务器。因此，在将博客部署到远程服务器（如GitHub Page）之前，即使没有本地测试的需求，仍需运行一遍上述命令以生成必要的静态网页文件。
+
+## 部署至GitHub Page
+
+在实现本地运行后，我们将博客部署到[GitHub Page上](https://pages.github.com/)。在部署之前，我们先做好以下准备工作：
+
+- 创建博客专用的repository，并命名为`USERNAME.github.io`，`USERNAME`为你的GitHub用户名。
+- 将本地的Chirpy-Jekyll项目关联至GitHub的仓库`USERNAME.github.io`。这一步我使用的是[GitHub Desktop](https://desktop.github.com/)，一款基于Git的图形化界面，相对Git更为简单易用，当然直接使用Git也能实现关联操作。
+- 在本地的Chirpy-Jekyll项目的根目录运行：
+
+```zsh
+bundle lock --add-platform x86_64-linux
+```
+
+我们再到GitHub上配置Page服务：
+
+- 访问博客所在仓库`USERNAME.github.io`，点击<kbd>Settings</kbd>，在左侧菜单栏中选中<kbd>Pages</kbd>，再到`Build and deployment`的`Source`一栏选中选项<kbd>GitHub Actions</kbd>。
+
+![Build source](/assets/img/build-my-blog/pages-source-light.png){: .light .border .normal w='375' h='140' }
+![Build source](/assets/img/build-my-blog/pages-source-dark.png){: .dark .normal w='375' h='140' }
+
+- 在<kbd>GitHub Actions</kbd>选项的下方将出现配置文件`GitHub Pages Jekyll`，点击<kbd>Configure</kbd>按钮，会显示配置文件的具体内容，再点击文件右上角的<kbd>Commit changes...</kbd>，即可在仓库中生成配置文件。
+
+- 最后，我们将配置文件同步到本地。完成上述步骤后，只要我们将代码push到GitHub的仓库中，GitHub Actions便能自动生成静态网页并部署到GitHub Page上。
+
+如果需要在个人服务器上部署博客，可参考[官方文档](https://chirpy.cotes.page/posts/getting-started/#manually-build-and-deploy)，在本教程中不做额外说明。
+
+## 博客的更新
+
+通过上述步骤，我们实现了Jekyll博客的搭建。如果要在博客上发布新的文章，只需遵循以下步骤：
+
+- 在`_posts`中添加新的markdown文件。
+- 执行下列命令生成静态网页：
+
+```zsh
+bundle exec jekyll s
+```
+
+- 推送至GitHub仓库，更新后的网页会自动部署到GitHub Page上。
+
+## 结语
+
+通过简单的三个步骤，我们实现了个人博客的搭建：
+
+1. 安装Jekyll框架生成博客的静态网页
+2. 应用Chirpy主题设置博客的布局
+3. 使用GitHub Page部署个人网站
+
+回顾下来，整个博客搭建的过程还是相当水到渠成的，没有遇上什么重大bug。当然，之所以过程这么顺利，是因为去年我已经尝试过使用[Hexo](https://hexo.io/)搭建[个人网站](https://github.com/ittousei/eephi.github.io)，不过当时的我十分头铁，妄图自己写一套网站的前端（此前没有前端经验，主要使用ChatGPT进行前端开发）。
+
+结果也在预料之中，起初我对这个项目是兴致盎然的，然而随着项目的深入bug一个接一个的出现，我更新代码的频率也逐渐降低，后来我的旧电脑不幸故障开不了机，再到换了新的Macbook，我的代码也没拷贝到新电脑上，这个旧电脑上的前端项目便不了了之了。
+
+这次博客的搭建历时两天，在4.19完成了Chirpy主题的应用和GitHub Page的部署，在4.20实现博客布局的个性化以及优化搜索算法。本教程主要记录了4.19的工作，4.20的工作会另开一篇进行说明，不过4.20主要是一些基于个人审美而做的工作，倒也不是很重要。最后，就简单地用一句话收尾吧：
+
+<center><i>搭建个人博客很简单，因为我们站在巨人的肩膀上。</i></center>

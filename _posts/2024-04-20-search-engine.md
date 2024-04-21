@@ -2,9 +2,8 @@
 title: 搜索优化
 description: 关于博客内置搜索引擎的改进
 author: MsEspeon
-date: 2024-04-20 13:23:00 +0800
-categories: [博客搭建]
-pin: true
+date: 2024-04-20 20:45:00 +0800
+categories: [Tutorial]
 math: true
 mermaid: true
 ---

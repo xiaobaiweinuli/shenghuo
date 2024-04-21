@@ -3,11 +3,9 @@ title: 改动说明
 description: 一些基于Chirpy主题的自定义改动
 author: MsEspeon
 date: 2024-04-19 12:00:00 +0800
-categories: [博客搭建]
-pin: true
+categories: [Tutorial, Jekyll]
 math: true
 mermaid: true
-comment: true
 ---
 
 ## 基本信息
