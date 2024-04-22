@@ -2,7 +2,7 @@
 title: Jekyll博客搭建教程（上篇）
 description: 关于Jekyll环境的安装与使用
 author: MsEspeon
-date: 2024-04-20 12:10:00 +0800
+date: 2024-04-21 12:10:00 +0800
 categories: [Tutorial, Jekyll]
 pin: true
 math: true
@@ -21,7 +21,7 @@ Jekyll要求安装以下环境：
 - RubyGems
 - Jekyll
 
-我的操作系统是Ventura(macOS 13)，因此主要基于mac的安装流程进行说明，其他系统的安装步骤类似，但这里仅给出文档链接不做具体说明。
+我的操作系统是Ventura(macOS 13)，因此主要基于mac的安装流程进行说明，其他系统的安装步骤类似，这里仅给出文档链接不做具体说明。
 
 ### 安装Ruby和RubyGems
 

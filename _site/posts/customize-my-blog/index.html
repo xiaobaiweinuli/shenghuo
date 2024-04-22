@@ -905,9 +905,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2145 words"
+  title="2180 words"
 >
-  <em>11 min</em> read</span>
+  <em>12 min</em> read</span>
 
         </div>
       </div>
@@ -1039,13 +1039,13 @@ layout: page
 8
 9
 </pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.title"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.url"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.date"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"categories"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.categories"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.content"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.title"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.url"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.date"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"categories"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.categories"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post.content"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></div></div>
 
@@ -1085,6 +1085,31 @@ A：如修</li>
 
 <ul>
   <li>在<code class="language-plaintext highlighter-rouge">/assets/lib/simple-jekyll-search/simple-jekyll-search.js</code>中重写了精确匹配的搜索算法；</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="code-header">
+        <span data-label-text="JavaScript"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">LiteralSearchStrategy</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">matches</span> <span class="o">=</span> <span class="nf">function </span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">crit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">str</span><span class="p">)</span> <span class="k">return</span> <span class="kc">false</span>
+    <span class="nx">str</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()</span>
+    <span class="nx">crit</span> <span class="o">=</span> <span class="nx">crit</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="nx">crit</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></div></div>
+
+<ul>
   <li>使用<a href="https://www.toptal.com/developers/javascript-minifier">在线转换</a>将.js文件转成.min.js格式；</li>
   <li>在<code class="language-plaintext highlighter-rouge">_data/orginal/cors.yml</code>中修改了搜索算法的引用地址。</li>
 </ul>
@@ -1125,18 +1150,18 @@ A：如修</li>
 10
 11
 12
-</pre></td><td class="rouge-code"><pre>    <span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">search-input</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">();</span>
-    <span class="kd">let</span> <span class="nx">firstOccurrence</span> <span class="o">=</span> <span class="nx">value</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">().</span><span class="nf">indexOf</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
-    <span class="k">if </span><span class="p">(</span><span class="nx">firstOccurrence</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">firstOccurrence</span> <span class="o">-</span> <span class="mi">50</span><span class="p">;</span>
-        <span class="k">if </span><span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">while </span><span class="p">(</span><span class="nx">start</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">[</span><span class="nx">start</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">[</span><span class="nx">start</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">，</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">[</span><span class="nx">start</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">。</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">start</span><span class="o">--</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="nx">value</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">firstOccurrence</span><span class="p">)}</span><span class="s2">&lt;mark style="background-color: rgba(255, 255, 153, 0.5);"&gt;</span><span class="p">${</span><span class="nx">value</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="nx">firstOccurrence</span><span class="p">,</span> <span class="nx">firstOccurrence</span><span class="o">+</span><span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">)}</span><span class="s2">&lt;/mark&gt;</span><span class="p">${</span><span class="nx">value</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="nx">firstOccurrence</span><span class="o">+</span><span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">start</span><span class="o">+</span><span class="mi">250</span><span class="p">)}</span><span class="s2">`</span><span class="p">;</span>
-    <span class="p">}</span>
+</pre></td><td class="rouge-code"><pre>  <span class="kd">var</span> <span class="nx">input</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">search-input</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">();</span>
+  <span class="kd">let</span> <span class="nx">firstOccurrence</span> <span class="o">=</span> <span class="nx">value</span><span class="p">.</span><span class="nf">toLowerCase</span><span class="p">().</span><span class="nf">indexOf</span><span class="p">(</span><span class="nx">input</span><span class="p">);</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">firstOccurrence</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="nx">firstOccurrence</span> <span class="o">-</span> <span class="mi">50</span><span class="p">;</span>
+      <span class="k">if </span><span class="p">(</span><span class="nx">start</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">while </span><span class="p">(</span><span class="nx">start</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">[</span><span class="nx">start</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">[</span><span class="nx">start</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">，</span><span class="dl">"</span> <span class="o">&amp;&amp;</span> <span class="nx">value</span><span class="p">[</span><span class="nx">start</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">。</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">start</span><span class="o">--</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="nx">value</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">firstOccurrence</span><span class="p">)}</span><span class="s2">&lt;mark style="background-color: rgba(255, 255, 153, 0.5);"&gt;</span><span class="p">${</span><span class="nx">value</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="nx">firstOccurrence</span><span class="p">,</span> <span class="nx">firstOccurrence</span><span class="o">+</span><span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">)}</span><span class="s2">&lt;/mark&gt;</span><span class="p">${</span><span class="nx">value</span><span class="p">.</span><span class="nf">substring</span><span class="p">(</span><span class="nx">firstOccurrence</span><span class="o">+</span><span class="nx">input</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="nx">start</span><span class="o">+</span><span class="mi">250</span><span class="p">)}</span><span class="s2">`</span><span class="p">;</span>
+  <span class="p">}</span>
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>优化后的搜索结果如图，改进后的算法能标注出关键词所在位置，并给出提及关键词的上下文。</p>
@@ -1331,13 +1356,6 @@ A：如修</li>
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/customize-my-blog/">Chirpy主题的进阶使用</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
           <a href="/posts/build-my-blog-1/">Jekyll博客搭建教程（上篇）</a>
         </li>
       
@@ -1346,6 +1364,13 @@ A：如修</li>
         
         <li class="text-truncate lh-lg">
           <a href="/posts/build-my-blog-2/">Jekyll博客搭建教程（下篇）</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/customize-my-blog/">Chirpy主题的进阶使用</a>
         </li>
       
     </ul>
@@ -1473,11 +1498,11 @@ A：如修</li>
 
 <time
   
-  data-ts="1713586200"
+  data-ts="1713672600"
   data-df="ll"
   
 >
-  Apr 20, 2024
+  Apr 21, 2024
 </time>
 
               <h4 class="pt-0 my-2">Jekyll博客搭建教程（上篇）</h4>
@@ -1501,11 +1526,11 @@ A：如修</li>
 
 <time
   
-  data-ts="1713615420"
+  data-ts="1713701820"
   data-df="ll"
   
 >
-  Apr 20, 2024
+  Apr 21, 2024
 </time>
 
               <h4 class="pt-0 my-2">Jekyll博客搭建教程（下篇）</h4>

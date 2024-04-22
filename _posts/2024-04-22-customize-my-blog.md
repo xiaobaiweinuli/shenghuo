@@ -95,13 +95,13 @@ Chirpy主题在博客中内置了文本搜索引擎，使用的搜索算法是Ch
 
 ```json
 {
-    {
-        "title": "post.title",
-        "url": "post.url",
-        "date": "post.date",
-        "categories": "post.categories",
-        "content": "post.content"
-    }
+  {
+    "title": "post.title",
+    "url": "post.url",
+    "date": "post.date",
+    "categories": "post.categories",
+    "content": "post.content"
+  }
 }
 ```
 
@@ -136,6 +136,19 @@ Chirpy主题在博客中内置了文本搜索引擎，使用的搜索算法是Ch
 于是，我非常不情愿地
 
 - 在`/assets/lib/simple-jekyll-search/simple-jekyll-search.js`中重写了精确匹配的搜索算法；
+
+```js
+function LiteralSearchStrategy () {
+  this.matches = function (str, crit) {
+    if (!str) return false
+    str = str.toLowerCase()
+    crit = crit.toLowerCase()
+
+    return str.indexOf(crit) >= 0
+ }
+}
+```
+
 - 使用[在线转换](https://www.toptal.com/developers/javascript-minifier)将.js文件转成.min.js格式；
 - 在`_data/orginal/cors.yml`中修改了搜索算法的引用地址。
 
@@ -158,18 +171,18 @@ search:
 我在`_includes/search_loader.html`中实现了这个思路，以下是部分代码片段：
 
 ```js
-    var input = document.getElementById("search-input").value.toLowerCase();
-    let firstOccurrence = value.toLowerCase().indexOf(input);
-    if (firstOccurrence != -1) {
-        let start = firstOccurrence - 50;
-        if (start < 0) {
-        start = 0;
-        }
-        while (start > 0 && value[start-1] != " " && value[start-1] != "，" && value[start-1] != "。") {
-        start--;
-        }
-        return `${value.substring(start, firstOccurrence)}<mark style="background-color: rgba(255, 255, 153, 0.5);">${value.substring(firstOccurrence, firstOccurrence+input.length)}</mark>${value.substring(firstOccurrence+input.length, start+250)}`;
-    }
+  var input = document.getElementById("search-input").value.toLowerCase();
+  let firstOccurrence = value.toLowerCase().indexOf(input);
+  if (firstOccurrence != -1) {
+      let start = firstOccurrence - 50;
+      if (start < 0) {
+      start = 0;
+      }
+      while (start > 0 && value[start-1] != " " && value[start-1] != "，" && value[start-1] != "。") {
+      start--;
+      }
+      return `${value.substring(start, firstOccurrence)}<mark style="background-color: rgba(255, 255, 153, 0.5);">${value.substring(firstOccurrence, firstOccurrence+input.length)}</mark>${value.substring(firstOccurrence+input.length, start+250)}`;
+  }
 ```
 
 优化后的搜索结果如图，改进后的算法能标注出关键词所在位置，并给出提及关键词的上下文。

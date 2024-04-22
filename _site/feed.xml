@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>N・H・K にようこそ！</title>
   <subtitle>A personal blog for recording everyday life, technical learning, and pieces of thoughts.</subtitle>
-  <updated>2024-04-22T21:59:35+08:00</updated>
+  <updated>2024-04-22T23:26:23+08:00</updated>
   <author>
     <name>MsEspeon</name>
     <uri>http://localhost:4000/</uri>
@@ -48,9 +48,9 @@
   <entry>
     <title>Jekyll博客搭建教程（下篇）</title>
     <link href="http://localhost:4000/posts/build-my-blog-2/" rel="alternate" type="text/html" title="Jekyll博客搭建教程（下篇）" />
-    <published>2024-04-20T20:17:00+08:00</published>
+    <published>2024-04-21T20:17:00+08:00</published>
   
-    <updated>2024-04-22T16:40:33+08:00</updated>
+    <updated>2024-04-22T21:59:50+08:00</updated>
   
     <id>http://localhost:4000/posts/build-my-blog-2/</id>
     <content src="http://localhost:4000/posts/build-my-blog-2/" />
@@ -74,9 +74,9 @@
   <entry>
     <title>Jekyll博客搭建教程（上篇）</title>
     <link href="http://localhost:4000/posts/build-my-blog-1/" rel="alternate" type="text/html" title="Jekyll博客搭建教程（上篇）" />
-    <published>2024-04-20T12:10:00+08:00</published>
+    <published>2024-04-21T12:10:00+08:00</published>
   
-    <updated>2024-04-22T16:40:33+08:00</updated>
+    <updated>2024-04-22T21:59:50+08:00</updated>
   
     <id>http://localhost:4000/posts/build-my-blog-1/</id>
     <content src="http://localhost:4000/posts/build-my-blog-1/" />

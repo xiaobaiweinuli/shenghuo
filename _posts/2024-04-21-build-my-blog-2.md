@@ -2,7 +2,7 @@
 title: Jekyll博客搭建教程（下篇）
 description: Chirpy主题的使用说明：使用Chirpy设置博客布局，在GitHub Page上部署博客
 author: MsEspeon
-date: 2024-04-20 20:17:00 +0800
+date: 2024-04-21 20:17:00 +0800
 categories: [Tutorial, Jekyll]
 pin: true
 math: true
