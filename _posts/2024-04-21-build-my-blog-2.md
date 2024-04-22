@@ -17,27 +17,29 @@ mermaid: true
 
 ## 下载主题
 
-Chirpy主题有两种下载方式：
+Chirpy主题有两种下载方法：
 
 - Chirpy Starter
 - Git
+
+两种方法均会使用到[Git](https://git-scm.com/)，请事先配置好Git的使用环境。
 
 ### Chirpy Starter
 
 前往官方的模版页面[Chirpy Start](https://github.com/cotes2020/chirpy-starter)，点击按钮<kbd>Use this template</kbd> > <kbd>Create a new repository</kbd>，将新的repository命名为`USERNAME.github.io`，其中`USERNAME`为你的GitHub用户名。
 
-再将项目下载到本地，并下载依赖库，将下列命令中的`USERNAME`替换为你的GitHub用户名。
+再将项目下载到本地，并安装依赖库。（记得将`USERNAME`替换为GitHub用户名）
 
 ```zsh
 git clone https://github.com/USERNAME/USERNAME.github.io
 bundle
 ```
 
-这个方法适合只想专心写文章不想接触底层代码的用户。用户无需关注原项目中那一大坨.html和.js文件（因为模版里没有），只需将文章添加至`_post`目录中即可实现博客的更新。当然不能修改代码也意味着，如果你想在原模版的基础上做些个性化修改，或是添加新的功能，用这个方法是无法实现的。
+这个方法适合只想专心写文章不想接触底层代码的用户。用户无需关注原项目中那一大坨html模版和js脚本，只需将文章添加至`_post`目录中即可实现博客的更新。当然不能修改代码也意味着，如果你想在原模版的基础上做些个性化修改，或是添加新的功能，用这个方法是无法实现的。
 
 ### Git
 
-作为一个事多的人，只是套用模版而不做任何修改是无法满足我的需求的，因此我采用了第二种方法：用[Git](https://git-scm.com/)将整个项目的代码下载至本地。这样便能直接修改源代码，实现我想要的功能。
+作为一个事多的人，只是套用模版而不做任何修改是无法满足我的需求的，因此我采用了第二种方法：用Git将整个项目下载至本地。这样便能直接修改源代码，实现我想要的功能。
 
 ```zsh
 git clone https://github.com/cotes2020/jekyll-theme-chirpy
@@ -71,9 +73,9 @@ bundle
 
 ### 可选配置
 
-在子目录`_data`下还存放有一些可选填的配置文件，主要涉及网页外观的显示，可根据需求修改。以下是对这些配置文件的简要说明：
+在子目录`_data`下还存放有一些可选填的配置文件，主要用于设置网页的外观，可根据需求修改。以下是对这些配置文件的简要说明：
 
-博客的语言信息存放在`_data/locate/`，如英语的配置文件为`_data/locate/en.yml`。比如我想自定义侧边菜单栏的选项名，只需修改以下配置。
+博客的语言配置存放在`_data/locate/`，其中英语的配置文件为`_data/locate/en.yml`。如下面这段配置定义了英文语言下侧边菜单栏的选项名称。
 
 ```yaml
 tabs:
@@ -86,7 +88,7 @@ tabs:
   about: About
 ```
 
-文章的作者信息存放在`_data/authors.yml`，可填写多个作者，在文章的作者栏中引用作者id。
+文章的作者信息存放在`_data/authors.yml`，可填写多个作者。
 
 ```yaml
 MsEspeon:
@@ -101,7 +103,7 @@ MsEspeon:
 #   icon: "fa-brands fa-x-twitter"
 ```
 
-文章的分享信息存放在`_data/share.yml`。比如我想分享文章到Twitter，只需在配置文件中填写以下内容。
+文章的分享信息存放在`_data/share.yml`。比如我想分享文章到Twitter，可在配置文件中添加以下内容。
 
 ```yaml
 platforms:
@@ -118,11 +120,11 @@ platforms:
 bundle exec jekyll s
 ```
 
-注意：以上命令包含两个功能，一是根据项目文件生成静态网页文件，二是将静态网页部署至本地服务器。因此，在将博客部署到远程服务器（如GitHub Page）之前，即使没有本地测试的需求，仍需运行一遍上述命令以生成必要的静态网页文件。
+注意：以上命令包含两个功能，一是根据项目文件生成静态网页文件，二是将静态网页部署至本地服务器。因此，在将博客部署到远程服务器之前，即使没有本地测试的需求，仍需运行一遍上述命令，以生成必要的静态网页文件。
 
 ## 部署至GitHub Page
 
-在实现本地运行后，我们将博客部署到[GitHub Page上](https://pages.github.com/)。在部署之前，我们先做好以下准备工作：
+在实现本地运行后，我们将博客部署到[GitHub Page](https://pages.github.com/)上。在部署之前，我们需要做好以下准备工作：
 
 - 创建博客专用的repository，并命名为`USERNAME.github.io`，`USERNAME`为你的GitHub用户名。
 - 将本地的Chirpy-Jekyll项目关联至GitHub的仓库`USERNAME.github.io`。这一步我使用的是[GitHub Desktop](https://desktop.github.com/)，一款基于Git的图形化界面，相对Git更为简单易用，当然直接使用Git也能实现关联操作。
@@ -143,14 +145,14 @@ bundle lock --add-platform x86_64-linux
 
 - 最后，我们将配置文件同步到本地。完成上述步骤后，只要我们将代码push到GitHub的仓库中，GitHub Actions便能自动生成静态网页并部署到GitHub Page上。
 
-如果需要在个人服务器上部署博客，可参考[官方文档](https://chirpy.cotes.page/posts/getting-started/#manually-build-and-deploy)，在本教程中不做额外说明。
+如果需要在个人服务器上部署博客，可参考[Chirpy官方文档](https://chirpy.cotes.page/posts/getting-started/#manually-build-and-deploy)，在本教程中不做额外说明。
 
-## 博客的更新
+## 更新博客
 
-通过上述步骤，我们实现了Jekyll博客的搭建。如果要在博客上发布新的文章，只需遵循以下步骤：
+如果要在博客上发布新的文章，只需遵循以下步骤：
 
-- 在`_posts`中添加新的markdown文件。
-- 执行下列命令生成静态网页：
+- 在`_posts`中添加新的Markdown文件。
+- 执行命令生成静态网页：
 
 ```zsh
 bundle exec jekyll s
@@ -160,16 +162,16 @@ bundle exec jekyll s
 
 ## 结语
 
-通过简单的三个步骤，我们实现了个人博客的搭建：
+通过简单的三步，我们实现了个人博客的搭建：
 
 1. 安装Jekyll框架生成博客的静态网页
 2. 应用Chirpy主题设置博客的布局
 3. 使用GitHub Page部署个人网站
 
-回顾下来，整个博客搭建的过程还是相当水到渠成的，没有遇上什么重大bug。当然，之所以过程这么顺利，是因为去年我已经尝试过使用[Hexo](https://hexo.io/)搭建[个人网站](https://github.com/ittousei/eephi.github.io)，不过当时的我十分头铁，妄图自己写一套网站的前端（此前没有前端经验，主要使用ChatGPT进行前端开发）。
+回顾下来，整个博客搭建的过程还是相当水到渠成的，没有遇上什么重大bug。当然，之所以过程这么顺利，是因为去年我已经尝试过使用[Hexo](https://hexo.io/)搭建个人网站，不过当时的我十分头铁，妄图自己写一套网站的前端（此前没有前端经验，主要使用ChatGPT进行前端开发）。
 
-结果也在预料之中，起初我对这个项目是兴致盎然的，然而随着项目的深入bug一个接一个的出现，我更新代码的频率也逐渐降低，后来我的旧电脑不幸故障开不了机，再到换了新的Macbook，我的代码也没拷贝到新电脑上，这个旧电脑上的前端项目便不了了之了。
+结果也在预料之中，起初我对这个项目是兴致盎然的，然而随着开发的深入bug一个接一个的出现，我更新代码的频率也逐渐降低，后来我的旧电脑不幸故障开不了机，再到换了新的MacBook，我的代码也没拷贝到新电脑上，这个旧电脑上的[前端项目](https://github.com/ittousei/eephi.github.io)便不了了之了。
 
-这次博客的搭建历时两天，在4.19完成了Chirpy主题的应用和GitHub Page的部署，在4.20实现博客布局的个性化以及优化搜索算法。本教程主要记录了4.19的工作，4.20的工作会另开一篇进行说明，不过4.20主要是一些基于个人审美而做的工作，倒也不是很重要。最后，就简单地用一句话收尾吧：
+有点偏题了，还是说回正题。这次博客的搭建历时两天，4.19完成了Chirpy主题的应用和GitHub Page的部署，4.20实现博客布局的个性化、优化搜索算法、以及添加评论系统。本教程主要记录了4.19的工作，4.20主要是一些基于个人审美而做的改动，之后会另开一篇文章进行说明。最后，就简单用一句话收尾吧：
 
 <center><i>搭建个人博客很简单，因为我们站在巨人的肩膀上。</i></center>

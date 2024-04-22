@@ -21,11 +21,11 @@ Jekyll要求安装以下环境：
 - RubyGems
 - Jekyll
 
-笔者的操作系统是Ventura(macOS 13)，因此主要基于mac的安装流程进行说明，其他系统的安装步骤类似，但这里仅给出文档链接不做具体说明。
+我的操作系统是Ventura(macOS 13)，因此主要基于mac的安装流程进行说明，其他系统的安装步骤类似，但这里仅给出文档链接不做具体说明。
 
 ### 安装Ruby和RubyGems
 
-Ruby的安装详见[Jekyll文档](https://jekyllrb.com/docs/installation/)。根据需求选择合适的版本，Jekyll要求Ruby版本高于**2.5.0**，本文使用的版本为**3.1.3**。RubyGems捆绑在Ruby的安装包中，无需额外下载。
+Ruby的安装详见[Jekyll Installation](https://jekyllrb.com/docs/installation/)。根据需求选择合适的版本，Jekyll要求Ruby版本高于**2.5.0**，本文使用的版本为**3.1.3**。RubyGems捆绑在Ruby的安装包中，无需额外下载。
 
 对于Windows/Linux等系统，请按照Jekyll文档的说明进行安装，并跳过本章节阅读下一章[使用Jekyll搭建博客](#使用jekyll搭建博客)。
 
@@ -107,7 +107,7 @@ bundle exec jekyll serve
 
 通过创建Jekyll项目，我们生成了一个简易的网站。当然这个网站十分简陋，和一个功能完备的现代博客相去甚远，下一步就是美化网页的外观以及添加更多的功能了。
 
-一个选择是自己写一套前端，可以参考这篇教程[Step by Step Tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)，其中的工作量无疑是巨大的。另一个选择是站在巨人的肩膀上，Jekyll拥有成熟的主题开发生态，用户可以从海量的主题模版中挑选出适合自己的那一款。我们可以在他人模版的基础上，根据自己的需求做一些自定义修改。
+一个选择是自己写一套前端，可以参考这篇教程[Step by Step Tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)，其中的工作量无疑是巨大的。另一个选择是使用别人写好的模版，Jekyll拥有成熟的主题开发生态，用户可以从海量的主题模版中挑选出适合自己的那一款。我们可以在他人模版的基础上，根据自己的需求做一些自定义修改。
 
 下面列出一些常用Jekyll主题站点：
 
@@ -117,4 +117,4 @@ bundle exec jekyll serve
 - [https://jekyllthemes.io/](https://jekyllthemes.io/)
 - [jekyll-themes.com](jekyll-themes.com)
 
-关于主题设置的更多内容，参见[Jekyll Themes](https://jekyllrb.com/docs/themes/)。在下篇中，我将详细介绍本站采用的主题，即[Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)主题的配置和使用。
+关于主题设置的更多内容，参考[Jekyll Themes](https://jekyllrb.com/docs/themes/)。在下篇中，我将详细介绍本站采用的主题，即[Chirpy](/posts/build-my-blog-2/)主题的配置和使用。

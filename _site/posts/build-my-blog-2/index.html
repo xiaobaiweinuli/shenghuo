@@ -953,7 +953,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1866 words"
+  title="1842 words"
 >
   <em>10 min</em> read</span>
 
@@ -971,18 +971,20 @@
 
 <h2 id="下载主题"><span class="me-2">下载主题</span><a href="#下载主题" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Chirpy主题有两种下载方式：</p>
+<p>Chirpy主题有两种下载方法：</p>
 
 <ul>
   <li>Chirpy Starter</li>
   <li>Git</li>
 </ul>
 
+<p>两种方法均会使用到<a href="https://git-scm.com/">Git</a>，请事先配置好Git的使用环境。</p>
+
 <h3 id="chirpy-starter"><span class="me-2">Chirpy Starter</span><a href="#chirpy-starter" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>前往官方的模版页面<a href="https://github.com/cotes2020/chirpy-starter">Chirpy Start</a>，点击按钮<kbd>Use this template</kbd> &gt; <kbd>Create a new repository</kbd>，将新的repository命名为<code class="language-plaintext highlighter-rouge">USERNAME.github.io</code>，其中<code class="language-plaintext highlighter-rouge">USERNAME</code>为你的GitHub用户名。</p>
 
-<p>再将项目下载到本地，并下载依赖库，将下列命令中的<code class="language-plaintext highlighter-rouge">USERNAME</code>替换为你的GitHub用户名。</p>
+<p>再将项目下载到本地，并安装依赖库。（记得将<code class="language-plaintext highlighter-rouge">USERNAME</code>替换为GitHub用户名）</p>
 
 <div class="language-zsh highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -992,11 +994,11 @@
 bundle
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>这个方法适合只想专心写文章不想接触底层代码的用户。用户无需关注原项目中那一大坨.html和.js文件（因为模版里没有），只需将文章添加至<code class="language-plaintext highlighter-rouge">_post</code>目录中即可实现博客的更新。当然不能修改代码也意味着，如果你想在原模版的基础上做些个性化修改，或是添加新的功能，用这个方法是无法实现的。</p>
+<p>这个方法适合只想专心写文章不想接触底层代码的用户。用户无需关注原项目中那一大坨html模版和js脚本，只需将文章添加至<code class="language-plaintext highlighter-rouge">_post</code>目录中即可实现博客的更新。当然不能修改代码也意味着，如果你想在原模版的基础上做些个性化修改，或是添加新的功能，用这个方法是无法实现的。</p>
 
 <h3 id="git"><span class="me-2">Git</span><a href="#git" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>作为一个事多的人，只是套用模版而不做任何修改是无法满足我的需求的，因此我采用了第二种方法：用<a href="https://git-scm.com/">Git</a>将整个项目的代码下载至本地。这样便能直接修改源代码，实现我想要的功能。</p>
+<p>作为一个事多的人，只是套用模版而不做任何修改是无法满足我的需求的，因此我采用了第二种方法：用Git将整个项目下载至本地。这样便能直接修改源代码，实现我想要的功能。</p>
 
 <div class="language-zsh highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -1038,9 +1040,9 @@ bundle
 
 <h3 id="可选配置"><span class="me-2">可选配置</span><a href="#可选配置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>在子目录<code class="language-plaintext highlighter-rouge">_data</code>下还存放有一些可选填的配置文件，主要涉及网页外观的显示，可根据需求修改。以下是对这些配置文件的简要说明：</p>
+<p>在子目录<code class="language-plaintext highlighter-rouge">_data</code>下还存放有一些可选填的配置文件，主要用于设置网页的外观，可根据需求修改。以下是对这些配置文件的简要说明：</p>
 
-<p>博客的语言信息存放在<code class="language-plaintext highlighter-rouge">_data/locate/</code>，如英语的配置文件为<code class="language-plaintext highlighter-rouge">_data/locate/en.yml</code>。比如我想自定义侧边菜单栏的选项名，只需修改以下配置。</p>
+<p>博客的语言配置存放在<code class="language-plaintext highlighter-rouge">_data/locate/</code>，其中英语的配置文件为<code class="language-plaintext highlighter-rouge">_data/locate/en.yml</code>。如下面这段配置定义了英文语言下侧边菜单栏的选项名称。</p>
 
 <div class="language-yaml highlighter-rouge"><div class="code-header">
         <span data-label-text="YAML"><i class="fas fa-code fa-fw small"></i></span>
@@ -1062,7 +1064,7 @@ bundle
   <span class="na">about</span><span class="pi">:</span> <span class="s">About</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>文章的作者信息存放在<code class="language-plaintext highlighter-rouge">_data/authors.yml</code>，可填写多个作者，在文章的作者栏中引用作者id。</p>
+<p>文章的作者信息存放在<code class="language-plaintext highlighter-rouge">_data/authors.yml</code>，可填写多个作者。</p>
 
 <div class="language-yaml highlighter-rouge"><div class="code-header">
         <span data-label-text="YAML"><i class="fas fa-code fa-fw small"></i></span>
@@ -1084,7 +1086,7 @@ bundle
 <span class="c1">#   icon: "fa-brands fa-x-twitter"</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>文章的分享信息存放在<code class="language-plaintext highlighter-rouge">_data/share.yml</code>。比如我想分享文章到Twitter，只需在配置文件中填写以下内容。</p>
+<p>文章的分享信息存放在<code class="language-plaintext highlighter-rouge">_data/share.yml</code>。比如我想分享文章到Twitter，可在配置文件中添加以下内容。</p>
 
 <div class="language-yaml highlighter-rouge"><div class="code-header">
         <span data-label-text="YAML"><i class="fas fa-code fa-fw small"></i></span>
@@ -1108,11 +1110,11 @@ bundle
 </pre></td><td class="rouge-code"><pre>bundle <span class="nb">exec </span>jekyll s
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>注意：以上命令包含两个功能，一是根据项目文件生成静态网页文件，二是将静态网页部署至本地服务器。因此，在将博客部署到远程服务器（如GitHub Page）之前，即使没有本地测试的需求，仍需运行一遍上述命令以生成必要的静态网页文件。</p>
+<p>注意：以上命令包含两个功能，一是根据项目文件生成静态网页文件，二是将静态网页部署至本地服务器。因此，在将博客部署到远程服务器之前，即使没有本地测试的需求，仍需运行一遍上述命令，以生成必要的静态网页文件。</p>
 
 <h2 id="部署至github-page"><span class="me-2">部署至GitHub Page</span><a href="#部署至github-page" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>在实现本地运行后，我们将博客部署到<a href="https://pages.github.com/">GitHub Page上</a>。在部署之前，我们先做好以下准备工作：</p>
+<p>在实现本地运行后，我们将博客部署到<a href="https://pages.github.com/">GitHub Page</a>上。在部署之前，我们需要做好以下准备工作：</p>
 
 <ul>
   <li>创建博客专用的repository，并命名为<code class="language-plaintext highlighter-rouge">USERNAME.github.io</code>，<code class="language-plaintext highlighter-rouge">USERNAME</code>为你的GitHub用户名。</li>
@@ -1144,15 +1146,15 @@ bundle
   </li>
 </ul>
 
-<p>如果需要在个人服务器上部署博客，可参考<a href="https://chirpy.cotes.page/posts/getting-started/#manually-build-and-deploy">官方文档</a>，在本教程中不做额外说明。</p>
+<p>如果需要在个人服务器上部署博客，可参考<a href="https://chirpy.cotes.page/posts/getting-started/#manually-build-and-deploy">Chirpy官方文档</a>，在本教程中不做额外说明。</p>
 
-<h2 id="博客的更新"><span class="me-2">博客的更新</span><a href="#博客的更新" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="更新博客"><span class="me-2">更新博客</span><a href="#更新博客" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>通过上述步骤，我们实现了Jekyll博客的搭建。如果要在博客上发布新的文章，只需遵循以下步骤：</p>
+<p>如果要在博客上发布新的文章，只需遵循以下步骤：</p>
 
 <ul>
-  <li>在<code class="language-plaintext highlighter-rouge">_posts</code>中添加新的markdown文件。</li>
-  <li>执行下列命令生成静态网页：</li>
+  <li>在<code class="language-plaintext highlighter-rouge">_posts</code>中添加新的Markdown文件。</li>
+  <li>执行命令生成静态网页：</li>
 </ul>
 
 <div class="language-zsh highlighter-rouge"><div class="code-header">
@@ -1167,7 +1169,7 @@ bundle
 
 <h2 id="结语"><span class="me-2">结语</span><a href="#结语" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>通过简单的三个步骤，我们实现了个人博客的搭建：</p>
+<p>通过简单的三步，我们实现了个人博客的搭建：</p>
 
 <ol>
   <li>安装Jekyll框架生成博客的静态网页</li>
@@ -1175,11 +1177,11 @@ bundle
   <li>使用GitHub Page部署个人网站</li>
 </ol>
 
-<p>回顾下来，整个博客搭建的过程还是相当水到渠成的，没有遇上什么重大bug。当然，之所以过程这么顺利，是因为去年我已经尝试过使用<a href="https://hexo.io/">Hexo</a>搭建<a href="https://github.com/ittousei/eephi.github.io">个人网站</a>，不过当时的我十分头铁，妄图自己写一套网站的前端（此前没有前端经验，主要使用ChatGPT进行前端开发）。</p>
+<p>回顾下来，整个博客搭建的过程还是相当水到渠成的，没有遇上什么重大bug。当然，之所以过程这么顺利，是因为去年我已经尝试过使用<a href="https://hexo.io/">Hexo</a>搭建个人网站，不过当时的我十分头铁，妄图自己写一套网站的前端（此前没有前端经验，主要使用ChatGPT进行前端开发）。</p>
 
-<p>结果也在预料之中，起初我对这个项目是兴致盎然的，然而随着项目的深入bug一个接一个的出现，我更新代码的频率也逐渐降低，后来我的旧电脑不幸故障开不了机，再到换了新的Macbook，我的代码也没拷贝到新电脑上，这个旧电脑上的前端项目便不了了之了。</p>
+<p>结果也在预料之中，起初我对这个项目是兴致盎然的，然而随着开发的深入bug一个接一个的出现，我更新代码的频率也逐渐降低，后来我的旧电脑不幸故障开不了机，再到换了新的MacBook，我的代码也没拷贝到新电脑上，这个旧电脑上的<a href="https://github.com/ittousei/eephi.github.io">前端项目</a>便不了了之了。</p>
 
-<p>这次博客的搭建历时两天，在4.19完成了Chirpy主题的应用和GitHub Page的部署，在4.20实现博客布局的个性化以及优化搜索算法。本教程主要记录了4.19的工作，4.20的工作会另开一篇进行说明，不过4.20主要是一些基于个人审美而做的工作，倒也不是很重要。最后，就简单地用一句话收尾吧：</p>
+<p>有点偏题了，还是说回正题。这次博客的搭建历时两天，4.19完成了Chirpy主题的应用和GitHub Page的部署，4.20实现博客布局的个性化、优化搜索算法、以及添加评论系统。本教程主要记录了4.19的工作，4.20主要是一些基于个人审美而做的改动，之后会另开一篇文章进行说明。最后，就简单用一句话收尾吧：</p>
 
 <center><i>搭建个人博客很简单，因为我们站在巨人的肩膀上。</i></center>
 
@@ -1594,7 +1596,7 @@ bundle
       'data-reactions-enabled': '1',
       'data-emit-metadata': '0',
       'data-theme': initTheme,
-      'data-input-position': 'bottom',
+      'data-input-position': 'top',
       'data-lang': 'en',
       'data-loading': 'lazy',
       crossorigin: 'anonymous',
