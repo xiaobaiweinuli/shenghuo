@@ -26,7 +26,7 @@ Chirpy主题有两种下载方法：
 
 ### Chirpy Starter
 
-前往官方的模版页面[Chirpy Start](https://github.com/cotes2020/chirpy-starter)，点击按钮<kbd>Use this template</kbd> > <kbd>Create a new repository</kbd>，将新的repository命名为`USERNAME.github.io`，其中`USERNAME`为你的GitHub用户名。
+前往官方的模版页面[Chirpy Start](https://github.com/cotes2020/chirpy-starter)，点击按钮<kbd>Use this template</kbd> > <kbd>Create a new repository</kbd>，将新的repository命名为`USERNAME.github.io`，其中`USERNAME`为GitHub用户名。
 
 再将项目下载到本地，并安装依赖库。（记得将`USERNAME`替换为GitHub用户名）
 
@@ -51,7 +51,7 @@ git clone https://github.com/cotes2020/jekyll-theme-chirpy
 bash tools/init
 ```
 
-完成初始化后，还需下载依赖库。
+完成初始化后，还需安装依赖库。
 
 ```zsh
 bundle
@@ -96,7 +96,7 @@ MsEspeon:
   url: https://github.com/ittousei/
 ```
 
-侧边菜单栏底部的社交账号信息存放在`_data/contact.yml`。比如我不想显示Twitter，只需在配置文件中注释掉相应内容。
+侧边菜单栏的社交账号信息存放在`_data/contact.yml`。比如我不想显示Twitter，只需在配置文件中注释掉相应内容。
 
 ```yaml
 # - type: twitter
@@ -126,24 +126,24 @@ bundle exec jekyll s
 
 在实现本地运行后，我们将博客部署到[GitHub Page](https://pages.github.com/)上。在部署之前，我们需要做好以下准备工作：
 
-- 创建博客专用的repository，并命名为`USERNAME.github.io`，`USERNAME`为你的GitHub用户名。
-- 将本地的Chirpy-Jekyll项目关联至GitHub的仓库`USERNAME.github.io`。这一步我使用的是[GitHub Desktop](https://desktop.github.com/)，一款基于Git的图形化界面，相对Git更为简单易用，当然直接使用Git也能实现关联操作。
-- 在本地的Chirpy-Jekyll项目的根目录运行：
+- 在GitHub上创建博客专用的repository，并命名为`USERNAME.github.io`，`USERNAME`为GitHub用户名。
+- 将本地的Chirpy-Jekyll项目关联至GitHub的仓库`USERNAME.github.io`。这一步我使用的是[GitHub Desktop](https://desktop.github.com/)，一款基于Git的图形化界面，相对于Git更为简单易用，当然直接使用Git也能实现关联操作。
+- 在本地项目的根目录运行：
 
 ```zsh
 bundle lock --add-platform x86_64-linux
 ```
 
-我们再到GitHub上配置Page服务：
+然后，我们到GitHub上配置Page服务：
 
-- 访问博客所在仓库`USERNAME.github.io`，点击<kbd>Settings</kbd>，在左侧菜单栏中选中<kbd>Pages</kbd>，再到`Build and deployment`的`Source`一栏选中选项<kbd>GitHub Actions</kbd>。
+- 访问博客所在仓库`USERNAME.github.io`，点击<kbd>Settings</kbd>，在左侧菜单栏中选中<kbd>Pages</kbd>，再到`Build and deployment`的`Source`一栏选中<kbd>GitHub Actions</kbd>选项。
 
 ![Build source](/assets/img/build-my-blog/pages-source-light.png){: .light .border .normal w='375' h='140' }
 ![Build source](/assets/img/build-my-blog/pages-source-dark.png){: .dark .normal w='375' h='140' }
 
 - 在<kbd>GitHub Actions</kbd>选项的下方将出现配置文件`GitHub Pages Jekyll`，点击<kbd>Configure</kbd>按钮，会显示配置文件的具体内容，再点击文件右上角的<kbd>Commit changes...</kbd>，即可在仓库中生成配置文件。
 
-- 最后，我们将配置文件同步到本地。完成上述步骤后，只要我们将代码push到GitHub的仓库中，GitHub Actions便能自动生成静态网页并部署到GitHub Page上。
+- 最后，我们将配置文件同步到本地。完成上述步骤后，只要我们将代码push到GitHub的仓库中，GitHub Actions便会自动生成静态网页并部署到GitHub Page上。
 
 如果需要在个人服务器上部署博客，可参考[Chirpy官方文档](https://chirpy.cotes.page/posts/getting-started/#manually-build-and-deploy)，在本教程中不做额外说明。
 
@@ -151,7 +151,7 @@ bundle lock --add-platform x86_64-linux
 
 如果要在博客上发布新的文章，只需遵循以下步骤：
 
-- 在`_posts`中添加新的Markdown文件。
+- 在`_posts`目录中添加新的Markdown文件。
 - 执行命令生成静态网页：
 
 ```zsh
@@ -172,6 +172,6 @@ bundle exec jekyll s
 
 结果也在预料之中，起初我对这个项目是兴致盎然的，然而随着开发的深入bug一个接一个的出现，我更新代码的频率也逐渐降低，后来我的旧电脑不幸故障开不了机，再到换了新的MacBook，我的代码也没拷贝到新电脑上，这个旧电脑上的[前端项目](https://github.com/ittousei/eephi.github.io)便不了了之了。
 
-有点偏题了，还是说回正题。这次博客的搭建历时两天，4.19完成了Chirpy主题的应用和GitHub Page的部署，4.20实现博客布局的个性化、优化搜索算法、以及添加评论系统。本教程主要记录了4.19的工作，4.20主要是一些基于个人审美而做的改动，之后会另开一篇文章进行说明。最后，就简单用一句话收尾吧：
+有点偏题了，还是说回正题。这次博客的搭建历时两天，4.19完成了Chirpy主题的应用和GitHub Page的部署，4.20实现博客布局的个性化、优化搜索算法、以及添加评论系统。本教程主要记录了4.19的工作，4.20主要是一些基于个人审美而做的改动，在本文的后续[Chirpy主题的进阶使用](/posts/customize-my-blog/)中说明。最后，就简单用一句话收尾吧：
 
 <center><i>搭建个人博客很简单，因为我们站在巨人的肩膀上。</i></center>

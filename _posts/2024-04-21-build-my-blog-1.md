@@ -11,7 +11,7 @@ mermaid: true
 
 ## 前言
 
-Jekyll是一个轻量级的静态网站生成器，它采用Liquid作为模板语言，支持用户自定义网页的外观布局、使用Markdown创作发布内容。本文介绍如何使用Jekyll搭建个人网站，内容参考自Jekyll的[说明文档](https://jekyllrb.com/docs/)。
+[Jekyll](https://github.com/jekyll/jekyll)是一个轻量级的静态网站生成器，它采用Liquid作为模板语言，支持用户自定义网页的外观布局、使用Markdown创作发布内容。本文介绍如何使用Jekyll搭建个人网站，内容参考自Jekyll的[说明文档](https://jekyllrb.com/docs/)。
 
 ## 环境安装
 
@@ -117,4 +117,4 @@ bundle exec jekyll serve
 - [https://jekyllthemes.io/](https://jekyllthemes.io/)
 - [jekyll-themes.com](jekyll-themes.com)
 
-关于主题设置的更多内容，参考[Jekyll Themes](https://jekyllrb.com/docs/themes/)。在下篇中，我将详细介绍本站采用的主题，即[Chirpy](/posts/build-my-blog-2/)主题的配置和使用。
+关于主题设置的更多内容，参考[Jekyll Themes](https://jekyllrb.com/docs/themes/)。在[下篇](/posts/build-my-blog-2/)中，我将详细介绍本站采用的主题，即Chirpy主题的配置和使用。
