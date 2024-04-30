@@ -45,7 +45,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@MsEspeon" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"MsEspeon","url":"https://github.com/ittousei/"},"dateModified":"2024-04-22T16:45:00+08:00","datePublished":"2024-04-22T16:45:00+08:00","description":"一些基于Chirpy主题的个性化设置","headline":"Chirpy主题的进阶使用","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/customize-my-blog/"},"url":"http://localhost:4000/posts/customize-my-blog/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"MsEspeon","url":"https://github.com/ittousei/"},"dateModified":"2024-04-22T23:26:44+08:00","datePublished":"2024-04-22T16:45:00+08:00","description":"一些基于Chirpy主题的个性化设置","headline":"Chirpy主题的进阶使用","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/customize-my-blog/"},"url":"http://localhost:4000/posts/customize-my-blog/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -860,6 +860,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1713799604"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Apr 22, 2024
+</time>
+
+        </span>
+      
 
       
 
@@ -905,7 +928,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2180 words"
+  title="2285 words"
 >
   <em>12 min</em> read</span>
 
@@ -925,13 +948,13 @@
 
 <h3 id="favicon设置"><span class="me-2">Favicon设置</span><a href="#favicon设置" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>Chirpy主题的Favicon文件存放在目录<code class="language-plaintext highlighter-rouge">assets/img/favicons/</code>下，用户可以使用<a href="https://realfavicongenerator.net/">Favicon Generator</a>生成Favicon文件，再替换掉目录中的预设文件即可。</p>
+<p>Chirpy主题的favicon存放在目录<code class="language-plaintext highlighter-rouge">assets/img/favicons/</code>下，用户可以使用<a href="https://realfavicongenerator.net/">Favicon Generator</a>生成favicon文件，再替换掉目录中的预设favicon即可。</p>
 
 <h3 id="语言和字体"><span class="me-2">语言和字体</span><a href="#语言和字体" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>博客的默认语言为英语，可以设置<code class="language-plaintext highlighter-rouge">_config.yml</code>中的<code class="language-plaintext highlighter-rouge">lang</code>变量来修改，变量取值详见<a href="http://www.lingoes.net/en/translator/langcode.htm">ISO语言代码</a>（如英语的<code class="language-plaintext highlighter-rouge">lang</code>取值为<code class="language-plaintext highlighter-rouge">en</code>，中文的<code class="language-plaintext highlighter-rouge">lang</code>取值为<code class="language-plaintext highlighter-rouge">zh-CN</code>）。</p>
 
-<p>每种语言对应一套默认字体，如英语默认的标题字体为Lato，段落字体为Source Sans Pro。字体的自定义在<code class="language-plaintext highlighter-rouge">_sass/addon.variables.scss</code>，参考这篇<a href="https://github.com/cotes2020/jekyll-theme-chirpy/pull/986">说明</a>。</p>
+<p>每种语言对应一套默认字体，如英语默认的标题字体为Lato，段落字体为Source Sans Pro。如果要自定义，需要修改样式文件<code class="language-plaintext highlighter-rouge">_sass/addon.variables.scss</code>，参考这篇<a href="https://github.com/cotes2020/jekyll-theme-chirpy/pull/986">说明</a>。</p>
 
 <div class="language-scss highlighter-rouge"><div class="code-header">
         <span data-label-text="SCSS"><i class="fas fa-code fa-fw small"></i></span>
@@ -943,7 +966,7 @@
 <span class="nv">$font-family-heading</span><span class="p">:</span> <span class="n">Lato</span><span class="o">,</span> <span class="s1">'Microsoft Yahei'</span><span class="o">,</span> <span class="s1">'PingFang SC'</span><span class="o">,</span> <span class="nb">sans-serif</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>至于为何会特意提到自定义字体，因为预设的中文字体实在太难看了，便改用了PingFang SC作为默认字体。</p>
+<p>至于为何会特意提到自定义字体，因为预设的中文字体太难看了，便改用了PingFang SC作为默认项。</p>
 
 <h3 id="侧边菜单栏排序"><span class="me-2">侧边菜单栏排序</span><a href="#侧边菜单栏排序" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
@@ -957,7 +980,7 @@
   <li>ABOUT</li>
 </ul>
 
-<p>如果要更改顺序，则需前往<code class="language-plaintext highlighter-rouge">_tabs</code>目录修改相应文件。以<code class="language-plaintext highlighter-rouge">_tabs/archives.md</code>为例：</p>
+<p>如果要更改顺序，则需前往<code class="language-plaintext highlighter-rouge">_tabs</code>目录修改相应文件。以archives选项为例，我们需要修改<code class="language-plaintext highlighter-rouge">_tabs/archives.md</code>：</p>
 
 <div class="language-md highlighter-rouge"><div class="code-header">
         <span data-label-text="Markdown"><i class="fas fa-code fa-fw small"></i></span>
@@ -973,7 +996,7 @@
 <span class="nn">---</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>对于菜单栏的archives选项，<code class="language-plaintext highlighter-rouge">layout</code>项表示前往<code class="language-plaintext highlighter-rouge">_layouts</code>目录，读取<code class="language-plaintext highlighter-rouge">_layouts/archives.html</code>作为网页模版；<code class="language-plaintext highlighter-rouge">icon</code>项表示使用<code class="language-plaintext highlighter-rouge">fa-archive</code>作为icon图标，更多图标详见<a href="https://fontawesome.com/v4/icons/">Font Awesome 4</a>；<code class="language-plaintext highlighter-rouge">order</code>项指定了选项在菜单栏中的顺序。</p>
+<p>其中，<code class="language-plaintext highlighter-rouge">layout</code>项表示前往<code class="language-plaintext highlighter-rouge">_layouts</code>目录，读取<code class="language-plaintext highlighter-rouge">_layouts/archives.html</code>作为网页模版；<code class="language-plaintext highlighter-rouge">icon</code>项表示使用<code class="language-plaintext highlighter-rouge">fa-archive</code>作为icon图标，更多图标详见<a href="https://fontawesome.com/v4/icons/">Font Awesome 4</a>；<code class="language-plaintext highlighter-rouge">order</code>项指定了选项在菜单栏中的顺序。</p>
 
 <p>例如，我想把archives选项放在菜单栏的第一位，只需将<code class="language-plaintext highlighter-rouge">order</code>项设置为<code class="language-plaintext highlighter-rouge">1</code>。</p>
 
@@ -1017,6 +1040,8 @@ layout: page
 
 <h2 id="优化文本搜索"><span class="me-2">优化文本搜索</span><a href="#优化文本搜索" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
+<p>本节旨在讨论博客文本搜索功能的实现思路，并针对原搜索算法的不足提出一些改进优化。如果想在博客中更新文本搜索功能，可以<a href="https://github.com/ittousei/ittousei.github.io/fork">fork</a>我的博客仓库。</p>
+
 <p>博客的文本搜索可分解为三个步骤：</p>
 
 <ul>
@@ -1025,7 +1050,7 @@ layout: page
   <li>输出包含关键词的文章</li>
 </ul>
 
-<p>Chirpy主题在博客中内置了文本搜索引擎，使用的搜索算法是Christian Fei的<a href="https://github.com/christian-fei/Simple-Jekyll-Search">Simple Jekyll Search</a>。该算法的实现思路是创建一个数据文件<code class="language-plaintext highlighter-rouge">search.json</code>，将每篇文章作为一级对象，将文章的<code class="language-plaintext highlighter-rouge">title</code>、<code class="language-plaintext highlighter-rouge">author</code>、<code class="language-plaintext highlighter-rouge">content</code>等元素作为二级对象，写入json文件中。</p>
+<p>Chirpy主题在博客中内置了文本搜索功能，使用的搜索算法是Christian Fei的<a href="https://github.com/christian-fei/Simple-Jekyll-Search">Simple Jekyll Search</a>。该算法的实现思路是创建一个文本数据集<code class="language-plaintext highlighter-rouge">search.json</code>，将每篇文章作为一级对象，文章的<code class="language-plaintext highlighter-rouge">title</code>、<code class="language-plaintext highlighter-rouge">author</code>、<code class="language-plaintext highlighter-rouge">content</code>等信息作为二级对象，写入json文件中。数据模版如下：</p>
 
 <div class="language-json highlighter-rouge"><div class="code-header">
         <span data-label-text="JSON"><i class="fas fa-code fa-fw small"></i></span>
@@ -1049,11 +1074,11 @@ layout: page
 </span><span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<p>这样一来，要在博客的所有文章中检索特定关键词，不用到每个文章的html页面一一查找，只需遍历一遍json文件即可。虽然实现思路很好，但实际写出来的代码却是一言难尽，而且原项目在2022年3月就停止维护了，你甚至找不到作者提意见。</p>
+<p>这样一来，要在博客的文章中检索关键词，不用到每个文章的html页面一一查找，只需遍历一遍json文件即可。虽然实现思路很好，但实际写出来的代码却是一言难尽，而且原项目在2022年3月就停止维护了，你甚至找不到作者提修改建议。</p>
 
 <h3 id="精准搜索"><span class="me-2">精准搜索</span><a href="#精准搜索" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>首当其冲的问题就是Simple Jekyll Search居然不支持精准搜索，考虑下面这个例子。我想搜索所有包含短语<code class="language-plaintext highlighter-rouge">let it go</code>的文章，这个句子会出现在搜索结果中：</p>
+<p>首当其冲的问题是Simple Jekyll Search居然不支持精准搜索，考虑下面这个例子。我想搜索所有包含短语<code class="language-plaintext highlighter-rouge">let it go</code>的文章，这个句子会出现在搜索结果中：</p>
 
 <center>
 <mark style="background-color: rgba(255, 255, 153, 0.5);">Let</mark>'s take a photo here. I'll print <mark style="background-color: rgba(255, 255, 153, 0.5);">it</mark> on my shirt and <mark style="background-color: rgba(255, 255, 153, 0.5);">go</mark> to school.
@@ -1075,13 +1100,13 @@ layout: page
 <p>既然这个问题已经被解决了，为什么搜索结果还是那么奇怪呢？仔细阅读<a href="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/">项目代码</a>，会发现非常坑的一点，作者虽然在源文件<code class="language-plaintext highlighter-rouge">/src/</code>更新了代码，却没有在<code class="language-plaintext highlighter-rouge">/dest/</code>重新编译项目。</p>
 
 <ul>
-  <li>Q：bug修了吗 <br />
+  <li>Q：bug修了吗？ <br />
 A：修了 <br />
-Q：修好了吗 <br />
+Q：修好了吗？ <br />
 A：如修</li>
 </ul>
 
-<p>于是，我非常不情愿地</p>
+<p>因此，我们需要重新编写搜索算法，并替换掉原先失效的算法库。具体步骤如下：</p>
 
 <ul>
   <li>在<code class="language-plaintext highlighter-rouge">/assets/lib/simple-jekyll-search/simple-jekyll-search.js</code>中重写了精确匹配的搜索算法；</li>
@@ -1110,7 +1135,7 @@ A：如修</li>
 </pre></td></tr></tbody></table></code></div></div>
 
 <ul>
-  <li>使用<a href="https://www.toptal.com/developers/javascript-minifier">在线转换</a>将.js文件转成.min.js格式；</li>
+  <li>使用<a href="https://www.toptal.com/developers/javascript-minifier">在线转换</a>将.js文件转成.min.js格式，生成的新文件为<code class="language-plaintext highlighter-rouge">/assets/lib/simple-jekyll-search/simple-jekyll-search.js</code>；</li>
   <li>在<code class="language-plaintext highlighter-rouge">_data/orginal/cors.yml</code>中修改了搜索算法的引用地址。</li>
 </ul>
 
@@ -1124,15 +1149,15 @@ A：如修</li>
   <span class="na">js</span><span class="pi">:</span> <span class="s">/assets/lib/simple-jekyll-search/simple-jekyll-search.min.js</span>
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>此外，我对数据文件<code class="language-plaintext highlighter-rouge">assets/js/data/search.json</code>也做了一些数据格式上的优化，使搜索结果更为精确，在此不做额外说明。</p>
+<p>此外，我对文本数据<code class="language-plaintext highlighter-rouge">assets/js/data/search.json</code>做了一些格式上的优化，使搜索结果更为精确，在此不做详细说明。</p>
 
 <h3 id="搜索结果展示"><span class="me-2">搜索结果展示</span><a href="#搜索结果展示" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>另一个问题是，Simple Jekyll Search虽然能告诉你哪些文章包含给定的关键词，但它不会显示这些关键词出现在文章的哪个位置。这是Chirpy主题的一个文本搜索示例：</p>
+<p>另一个问题是，Simple Jekyll Search虽然能告诉你哪些文章包含关键词，但它不会显示关键词具体出现在文章的哪个位置。这是Chirpy主题的一个关键词检索示例：</p>
 
 <p><a href="/assets/img/custom-my-blog/original-search.jpeg" class="popup img-link  shimmer"><img src="/assets/img/custom-my-blog/original-search.jpeg" alt="" loading="lazy"></a></p>
 
-<p>可以看到，搜索引擎只是简单列出了包含关键词<code class="language-plaintext highlighter-rouge">Chirpy</code>的文章标题和文章简介，而实际上我更想知道关键词在这些文章中出现的位置，以及提及关键词的前后文。这篇<a href="https://reesdraminski.com/garden/search-with-simplejekyllsearch/">博客</a>提出了一种可行的优化思路：Simple Jekyll Search在完成全局搜索后，会输出所有包含关键词的文章。此时对这些文章再重复做一次关键词检索，记录下关键词在文章中首次出现的位置，输出该位置向前数的100个字符（上文）和向后数的100个字符（下文）。</p>
+<p>可以看到，搜索引擎只是简单列出了包含关键词<code class="language-plaintext highlighter-rouge">Chirpy</code>的文章标题和简介，而实际上我更想知道关键词在这些文章中出现的位置，以及提及关键词的前后文。这篇<a href="https://reesdraminski.com/garden/search-with-simplejekyllsearch/">博客</a>提出了一种可行的优化思路：Simple Jekyll Search在完成全局搜索后，会输出所有包含关键词的文章。此时对这些文章再重复做一次关键词检索，记录下关键词在一篇文章中首次出现的位置，输出该位置向前数的50个字符（上文）和向后数的50个字符（下文）。</p>
 
 <p>我在<code class="language-plaintext highlighter-rouge">_includes/search_loader.html</code>中实现了这个思路，以下是部分代码片段：</p>
 

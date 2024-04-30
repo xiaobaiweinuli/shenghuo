@@ -4,6 +4,7 @@ description: 一些基于Chirpy主题的个性化设置
 author: MsEspeon
 date: 2024-04-22 16:45:00 +0800
 categories: [Tutorial, Jekyll]
+pin: false
 math: true
 mermaid: true
 ---
@@ -18,13 +19,13 @@ mermaid: true
 
 ### Favicon设置
 
-Chirpy主题的Favicon文件存放在目录`assets/img/favicons/`下，用户可以使用[Favicon Generator](https://realfavicongenerator.net/)生成Favicon文件，再替换掉目录中的预设文件即可。
+Chirpy主题的favicon存放在目录`assets/img/favicons/`下，用户可以使用[Favicon Generator](https://realfavicongenerator.net/)生成favicon文件，再替换掉目录中的预设favicon即可。
 
 ### 语言和字体
 
 博客的默认语言为英语，可以设置`_config.yml`中的`lang`变量来修改，变量取值详见[ISO语言代码](http://www.lingoes.net/en/translator/langcode.htm)（如英语的`lang`取值为`en`，中文的`lang`取值为`zh-CN`）。
 
-每种语言对应一套默认字体，如英语默认的标题字体为Lato，段落字体为Source Sans Pro。字体的自定义在`_sass/addon.variables.scss`，参考这篇[说明](https://github.com/cotes2020/jekyll-theme-chirpy/pull/986)。
+每种语言对应一套默认字体，如英语默认的标题字体为Lato，段落字体为Source Sans Pro。如果要自定义，需要修改样式文件`_sass/addon.variables.scss`，参考这篇[说明](https://github.com/cotes2020/jekyll-theme-chirpy/pull/986)。
 
 ```scss
 /* fonts */
@@ -32,7 +33,7 @@ $font-family-base: 'Source Sans Pro', 'Microsoft Yahei', 'PingFang SC', sans-ser
 $font-family-heading: Lato, 'Microsoft Yahei', 'PingFang SC', sans-serif !default;
 ```
 
-至于为何会特意提到自定义字体，因为预设的中文字体实在太难看了，便改用了PingFang SC作为默认字体。
+至于为何会特意提到自定义字体，因为预设的中文字体太难看了，便改用了PingFang SC作为默认项。
 
 ### 侧边菜单栏排序
 
@@ -44,7 +45,7 @@ $font-family-heading: Lato, 'Microsoft Yahei', 'PingFang SC', sans-serif !defaul
 - ARCHIVES
 - ABOUT
 
-如果要更改顺序，则需前往`_tabs`目录修改相应文件。以`_tabs/archives.md`为例：
+如果要更改顺序，则需前往`_tabs`目录修改相应文件。以archives选项为例，我们需要修改`_tabs/archives.md`：
 
 ```md
 ---
@@ -54,7 +55,7 @@ order: 3
 ---
 ```
 
-对于菜单栏的archives选项，`layout`项表示前往`_layouts`目录，读取`_layouts/archives.html`作为网页模版；`icon`项表示使用`fa-archive`作为icon图标，更多图标详见[Font Awesome 4](https://fontawesome.com/v4/icons/)；`order`项指定了选项在菜单栏中的顺序。
+其中，`layout`项表示前往`_layouts`目录，读取`_layouts/archives.html`作为网页模版；`icon`项表示使用`fa-archive`作为icon图标，更多图标详见[Font Awesome 4](https://fontawesome.com/v4/icons/)；`order`项指定了选项在菜单栏中的顺序。
 
 例如，我想把archives选项放在菜单栏的第一位，只需将`order`项设置为`1`。
 
@@ -85,13 +86,15 @@ layout: page
 
 ## 优化文本搜索
 
+本节旨在讨论博客文本搜索功能的实现思路，并针对原搜索算法的不足提出一些改进优化。如果想在博客中更新文本搜索功能，可以[fork](https://github.com/ittousei/ittousei.github.io/fork)我的博客仓库。
+
 博客的文本搜索可分解为三个步骤：
 
 - 读取用户输入的关键词
 - 遍历博客的所有文章检索关键词
 - 输出包含关键词的文章
 
-Chirpy主题在博客中内置了文本搜索引擎，使用的搜索算法是Christian Fei的[Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search)。该算法的实现思路是创建一个数据文件`search.json`，将每篇文章作为一级对象，将文章的`title`、`author`、`content`等元素作为二级对象，写入json文件中。
+Chirpy主题在博客中内置了文本搜索功能，使用的搜索算法是Christian Fei的[Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search)。该算法的实现思路是创建一个文本数据集`search.json`，将每篇文章作为一级对象，文章的`title`、`author`、`content`等信息作为二级对象，写入json文件中。数据模版如下：
 
 ```json
 {
@@ -105,11 +108,11 @@ Chirpy主题在博客中内置了文本搜索引擎，使用的搜索算法是Ch
 }
 ```
 
-这样一来，要在博客的所有文章中检索特定关键词，不用到每个文章的html页面一一查找，只需遍历一遍json文件即可。虽然实现思路很好，但实际写出来的代码却是一言难尽，而且原项目在2022年3月就停止维护了，你甚至找不到作者提意见。
+这样一来，要在博客的文章中检索关键词，不用到每个文章的html页面一一查找，只需遍历一遍json文件即可。虽然实现思路很好，但实际写出来的代码却是一言难尽，而且原项目在2022年3月就停止维护了，你甚至找不到作者提修改建议。
 
 ### 精准搜索
 
-首当其冲的问题就是Simple Jekyll Search居然不支持精准搜索，考虑下面这个例子。我想搜索所有包含短语`let it go`的文章，这个句子会出现在搜索结果中：
+首当其冲的问题是Simple Jekyll Search居然不支持精准搜索，考虑下面这个例子。我想搜索所有包含短语`let it go`的文章，这个句子会出现在搜索结果中：
 
 <center>
 <mark style="background-color: rgba(255, 255, 153, 0.5);">Let</mark>'s take a photo here. I'll print <mark style="background-color: rgba(255, 255, 153, 0.5);">it</mark> on my shirt and <mark style="background-color: rgba(255, 255, 153, 0.5);">go</mark> to school.
@@ -128,12 +131,12 @@ Chirpy主题在博客中内置了文本搜索引擎，使用的搜索算法是Ch
 
 既然这个问题已经被解决了，为什么搜索结果还是那么奇怪呢？仔细阅读[项目代码](https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/)，会发现非常坑的一点，作者虽然在源文件`/src/`更新了代码，却没有在`/dest/`重新编译项目。
 
-- Q：bug修了吗 \\
+- Q：bug修了吗？ \\
   A：修了 \\
-  Q：修好了吗 \\
+  Q：修好了吗？ \\
   A：如修
 
-于是，我非常不情愿地
+因此，我们需要重新编写搜索算法，并替换掉原先失效的算法库。具体步骤如下：
 
 - 在`/assets/lib/simple-jekyll-search/simple-jekyll-search.js`中重写了精确匹配的搜索算法；
 
@@ -149,7 +152,7 @@ function LiteralSearchStrategy () {
 }
 ```
 
-- 使用[在线转换](https://www.toptal.com/developers/javascript-minifier)将.js文件转成.min.js格式；
+- 使用[在线转换](https://www.toptal.com/developers/javascript-minifier)将.js文件转成.min.js格式，生成的新文件为`/assets/lib/simple-jekyll-search/simple-jekyll-search.js`；
 - 在`_data/orginal/cors.yml`中修改了搜索算法的引用地址。
 
 ```yaml
@@ -158,15 +161,15 @@ search:
   js: /assets/lib/simple-jekyll-search/simple-jekyll-search.min.js
 ```
 
-此外，我对数据文件`assets/js/data/search.json`也做了一些数据格式上的优化，使搜索结果更为精确，在此不做额外说明。
+此外，我对文本数据`assets/js/data/search.json`做了一些格式上的优化，使搜索结果更为精确，在此不做详细说明。
 
 ### 搜索结果展示
 
-另一个问题是，Simple Jekyll Search虽然能告诉你哪些文章包含给定的关键词，但它不会显示这些关键词出现在文章的哪个位置。这是Chirpy主题的一个文本搜索示例：
+另一个问题是，Simple Jekyll Search虽然能告诉你哪些文章包含关键词，但它不会显示关键词具体出现在文章的哪个位置。这是Chirpy主题的一个关键词检索示例：
 
 ![](/assets/img/custom-my-blog/original-search.jpeg)
 
-可以看到，搜索引擎只是简单列出了包含关键词`Chirpy`的文章标题和文章简介，而实际上我更想知道关键词在这些文章中出现的位置，以及提及关键词的前后文。这篇[博客](https://reesdraminski.com/garden/search-with-simplejekyllsearch/)提出了一种可行的优化思路：Simple Jekyll Search在完成全局搜索后，会输出所有包含关键词的文章。此时对这些文章再重复做一次关键词检索，记录下关键词在文章中首次出现的位置，输出该位置向前数的100个字符（上文）和向后数的100个字符（下文）。
+可以看到，搜索引擎只是简单列出了包含关键词`Chirpy`的文章标题和简介，而实际上我更想知道关键词在这些文章中出现的位置，以及提及关键词的前后文。这篇[博客](https://reesdraminski.com/garden/search-with-simplejekyllsearch/)提出了一种可行的优化思路：Simple Jekyll Search在完成全局搜索后，会输出所有包含关键词的文章。此时对这些文章再重复做一次关键词检索，记录下关键词在一篇文章中首次出现的位置，输出该位置向前数的50个字符（上文）和向后数的50个字符（下文）。
 
 我在`_includes/search_loader.html`中实现了这个思路，以下是部分代码片段：
 
