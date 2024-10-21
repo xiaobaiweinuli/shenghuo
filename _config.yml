@@ -116,10 +116,10 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: xiaobaiweinuli/issues # <gh-username>/<repo>
-    repo_id: R_kgDOKz8_JQ
-    category: Announcements
-    category_id: DIC_kwDOKz8_Jc4CcAYx
+    repo: "xiaobaiweinuli/issues" # <gh-username>/<repo>
+    repo_id: "R_kgDOKz8_JQ"
+    category: "Announcements"
+    category_id: "DIC_kwDOKz8_Jc4CcAYx"
     mapping: "title" # optional, default to 'pathname'
     strict: "0" # optional, default to '0'
     input_position: "top" # optional, default to 'bottom'
