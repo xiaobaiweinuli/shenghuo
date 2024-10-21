@@ -1,5 +1,5 @@
 ---
-layout: treehole
+layout: tree hole
 icon: fas fa-tree
-order: 2
+order: 3
 ---
