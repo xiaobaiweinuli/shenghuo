@@ -1,9 +1,9 @@
 ---
 # the default layout is 'page'
 icon: fas fa-user-friends
-order: 5
+order: 4
 ---
 
-- [Quantum Observers](https://quantumobserveriastu.github.io)
-- [Zhiqi Huang](http://zhiqihuang.top)
-- [白舟尘](https://sirohune.site)
+- 星霜笔记](https://xiaobaiweinuli.github.io/xingshuang/)
+- [星霜笔记](https://xiaobaiweinuli.github.io/shenghuo/)
+- [星霜笔记](https://xiaobaiweinuli.github.io/blog)
