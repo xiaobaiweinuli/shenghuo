@@ -35,3 +35,8 @@ platforms:
   #     - label: fosstodon.org
   #       link: "https://fosstodon.org/"
   #     - label: photog.social
+<<<<<<< HEAD
+  #       link: "https://photog.social/"
+=======
+  #       link: "https://photog.social/"
+>>>>>>> parent of 1cbae8be (描述您的更改)
